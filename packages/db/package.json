@@ -4,22 +4,22 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "db": "drizzle-kit",
+    "db": "dotenv -e .env -- prisma",
     "check-types": "tsc --noEmit"
   },
   "exports": {
-    ".": "./src/index.ts",
-    "./schema": "./src/schema.ts"
+    ".": "./src/index.ts"
   },
   "dependencies": {
-    "drizzle-orm": "catalog:",
-    "postgres": "catalog:"
+    "@prisma/adapter-pg": "catalog:",
+    "@prisma/client": "catalog:",
+    "prisma": "catalog:"
   },
   "devDependencies": {
-    "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@types/node": "catalog:",
-    "drizzle-kit": "catalog:",
+    "dotenv-cli": "catalog:",
+    "tsx": "catalog:",
     "typescript": "catalog:"
   }
 }

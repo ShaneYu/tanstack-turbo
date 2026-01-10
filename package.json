@@ -16,7 +16,7 @@
     "ui": "pnpm --filter=@repo/ui run ui",
     "ui:web": "pnpm --filter=@repo/web run ui",
     "auth:secret": "pnpm dlx @better-auth/cli@latest secret",
-    "auth:generate": "pnpm dlx @better-auth/cli@latest generate --config ./packages/auth/src/auth.ts --y --output ./packages/db/src/schema/auth.schema.ts && prettier --write ./packages/db/src/schema/auth.schema.ts"
+    "auth:generate": "pnpm dlx @better-auth/cli@latest generate --config ./packages/auth/src/auth.ts --y --output ./packages/db/src/schema/auth.prisma"
   },
   "simple-git-hooks": {
     "pre-push": "pnpm run format",
@@ -35,6 +35,7 @@
     "@biomejs/biome": "catalog:",
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
+    "dotenv-cli": "catalog:",
     "lint-staged": "catalog:",
     "simple-git-hooks": "catalog:",
     "turbo": "catalog:"

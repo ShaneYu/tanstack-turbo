@@ -1,4 +1,4 @@
 {
-  "root": false,
-  "extends": "@repo/biome-config/ui"
+	"root": false,
+	"extends": ["../../tooling/biome-config/ui.json"]
 }

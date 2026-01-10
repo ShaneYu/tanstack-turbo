@@ -6,27 +6,27 @@ import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  resolve: {
-    tsconfigPaths: true,
-  },
-  plugins: [
-    devtools(),
-    tanstackStart(),
-    // https://tanstack.com/start/latest/docs/framework/react/guide/hosting
-    nitro(),
-    viteReact({
-      // https://react.dev/learn/react-compiler
-      babel: {
-        plugins: [
-          [
-            "babel-plugin-react-compiler",
-            {
-              target: "19",
-            },
-          ],
-        ],
-      },
-    }),
-    tailwindcss(),
-  ],
+	resolve: {
+		tsconfigPaths: true,
+	},
+	plugins: [
+		devtools(),
+		tanstackStart(),
+		// https://tanstack.com/start/latest/docs/framework/react/guide/hosting
+		nitro(),
+		viteReact({
+			// https://react.dev/learn/react-compiler
+			babel: {
+				plugins: [
+					[
+						"babel-plugin-react-compiler",
+						{
+							target: "19",
+						},
+					],
+				],
+			},
+		}),
+		tailwindcss(),
+	],
 });

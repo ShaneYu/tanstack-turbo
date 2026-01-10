@@ -1,5 +1,5 @@
 import { createServerOnlyFn } from "@tanstack/react-start";
-import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { prismaAdapter } from "better-auth/adapters/prisma";
 import { betterAuth } from "better-auth/minimal";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 
@@ -12,8 +12,8 @@ const getAuthConfig = createServerOnlyFn(() =>
     telemetry: {
       enabled: false,
     },
-    database: drizzleAdapter(db, {
-      provider: "pg",
+    database: prismaAdapter(db, {
+      provider: "postgresql",
     }),
 
     // https://www.better-auth.com/docs/integrations/tanstack#usage-tips
@@ -45,7 +45,7 @@ const getAuthConfig = createServerOnlyFn(() =>
     },
 
     experimental: {
-      // https://www.better-auth.com/docs/adapters/drizzle#joins-experimental
+      // https://www.better-auth.com/docs/adapters/prisma#joins-experimental
       joins: true,
     },
   }),

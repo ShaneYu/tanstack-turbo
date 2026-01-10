@@ -21,7 +21,7 @@
   // use LF line endings
   "files.eol": "\n",
 
-   // associate .env files with dotenv (vscode extension)
+  // associate .env files with dotenv (vscode extension)
   "files.associations": {
     ".env": "dotenv",
     ".env.*.local": "dotenv",
@@ -46,5 +46,5 @@
   "editor.tabSize": 2,
   "biome.enableProjectConfig": true,
   "html.format.wrapLineLength": 120,
-  "json.schemaDownload.enable": true,
+  "json.schemaDownload.enable": true
 }

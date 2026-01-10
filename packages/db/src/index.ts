@@ -1,8 +1,16 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "./generated/client.js";
 
-import * as schema from "./schema";
+const adapter = new PrismaPg({
+  connectionString: process.env.SERVER_DATABASE_URL,
+});
 
-const driver = postgres(process.env.SERVER_DATABASE_URL as string);
+declare global {
+  var __prisma: PrismaClient | undefined;
+}
 
-export const db = drizzle({ client: driver, schema, casing: "snake_case" });
+export const db = globalThis.__prisma || new PrismaClient({ adapter });
+
+if (process.env.NODE_ENV !== "production") {
+  globalThis.__prisma = db;
+}
