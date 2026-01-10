@@ -1,7 +1,8 @@
 {
   "recommendations": [
-    "prettier.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "bradlc.vscode-tailwindcss"
+    "biomejs.biome",
+    "bradlc.vscode-tailwindcss",
+    "mikestead.dotenv",
+    "editorconfig.editorconfig"
   ]
 }

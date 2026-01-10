@@ -5,11 +5,11 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "dev:web": "turbo run dev --filter=@repo/web",
-    "lint": "turbo run lint",
-    "format": "prettier --write .",
+    "lint": "biome lint",
+    "format": "biome format --write",
     "check-types": "turbo run check-types",
-    "check": "pnpm format && turbo run lint && turbo run check-types",
-    "prepare": "husky",
+    "check": "pnpm biome check --write && turbo run check-types",
+    "prepare": "simple-git-hooks",
     "deps": "pnpm dlx taze@latest -Ilwr",
     "deps:major": "pnpm dlx taze@latest major -Ilwr",
     "db": "pnpm --filter=@repo/db run db",
@@ -18,19 +18,47 @@
     "auth:secret": "pnpm dlx @better-auth/cli@latest secret",
     "auth:generate": "pnpm dlx @better-auth/cli@latest generate --config ./packages/auth/src/auth.ts --y --output ./packages/db/src/schema/auth.schema.ts && prettier --write ./packages/db/src/schema/auth.schema.ts"
   },
+  "simple-git-hooks": {
+    "pre-push": "pnpm run format",
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm commitlint --edit ${1}"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write"
+    "*": "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
   },
   "devDependencies": {
-    "husky": "catalog:",
+    "@biomejs/biome": "catalog:",
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
     "lint-staged": "catalog:",
-    "prettier": "catalog:",
-    "prettier-plugin-organize-imports": "catalog:",
-    "prettier-plugin-tailwindcss": "catalog:",
+    "simple-git-hooks": "catalog:",
     "turbo": "catalog:"
   },
   "packageManager": "pnpm@10.27.0",
   "engines": {
     "node": ">=22"
+  },
+  "cspell": {
+    "version": "0.2",
+    "useGitignore": true,
+    "language": "en-GB",
+    "ignorePaths": [
+      "**/routeTree.gen.ts"
+    ],
+    "words": [
+      "biome",
+      "turborepo",
+      "oklch",
+      "shadcn",
+      "tanstack",
+      "tanstackstart",
+      "vinxi",
+      "vite"
+    ]
   }
 }

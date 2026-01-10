@@ -9,9 +9,6 @@
       "outputs": ["dist/**", ".vercel/**", ".nitro/**", ".output/**", ".tanstack/**"],
       "env": ["SERVER_*"]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
     "check-types": {
       "dependsOn": ["^check-types"]
     },

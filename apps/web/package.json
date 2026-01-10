@@ -7,8 +7,6 @@
     "build": "vite build",
     "check-types": "tsc --noEmit",
     "start": "node .output/server/index.mjs",
-    "lint": "eslint .",
-    "format": "prettier --write .",
     "ui": "pnpm dlx shadcn@latest"
   },
   "dependencies": {
@@ -32,7 +30,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
+    "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@tailwindcss/vite": "catalog:",
     "@tanstack/devtools-vite": "catalog:",
@@ -44,10 +42,6 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "babel-plugin-react-compiler": "catalog:",
-    "eslint": "catalog:",
-    "prettier": "catalog:",
-    "prettier-plugin-organize-imports": "catalog:",
-    "prettier-plugin-tailwindcss": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   }

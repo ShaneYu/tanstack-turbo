@@ -21,8 +21,30 @@
   // use LF line endings
   "files.eol": "\n",
 
-  // set prettier as default formatter for json, ts, tsx, js, jsx, html, css
-  "[json][jsonc][typescript][typescriptreact][javascript][javascriptreact][html][css]": {
-    "editor.defaultFormatter": "prettier.prettier-vscode"
-  }
+   // associate .env files with dotenv (vscode extension)
+  "files.associations": {
+    ".env": "dotenv",
+    ".env.*.local": "dotenv",
+    ".env.local": "dotenv"
+  },
+
+  // set prettier as default formatter for json, ts, tsx, js, jsx, css
+  "[json][jsonc][typescript][typescriptreact][javascript][javascriptreact][css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+
+  // indentation and formatting settings
+  "editor.autoIndent": "advanced",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.indentSize": "tabSize",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "biome.enableProjectConfig": true,
+  "html.format.wrapLineLength": 120,
+  "json.schemaDownload.enable": true,
 }

@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "db": "drizzle-kit",
-    "lint": "eslint .",
     "check-types": "tsc --noEmit"
   },
   "exports": {
@@ -17,11 +16,10 @@
     "postgres": "catalog:"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
+    "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "drizzle-kit": "catalog:",
-    "eslint": "catalog:",
     "typescript": "catalog:"
   }
 }

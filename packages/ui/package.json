@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "ui": "pnpm dlx shadcn@latest",
-    "lint": "eslint .",
     "check-types": "tsc --noEmit"
   },
   "exports": {
@@ -29,11 +28,10 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
+    "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "eslint": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
