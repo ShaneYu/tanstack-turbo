@@ -1,3 +1,9 @@
 {
-  "recommendations": ["biomejs.biome", "bradlc.vscode-tailwindcss", "mikestead.dotenv", "editorconfig.editorconfig"]
+  "recommendations": [
+    "biomejs.biome",
+    "bradlc.vscode-tailwindcss",
+    "mikestead.dotenv",
+    "editorconfig.editorconfig",
+    "csstools.postcss"
+  ]
 }

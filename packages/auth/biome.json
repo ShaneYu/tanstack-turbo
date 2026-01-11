@@ -1,4 +1,4 @@
 {
   "root": false,
-  "extends": ["../../tooling/biome-config/base.json"]
+  "extends": ["@repo/biome-config/base"]
 }

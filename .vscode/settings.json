@@ -25,7 +25,8 @@
   "files.associations": {
     ".env": "dotenv",
     ".env.*.local": "dotenv",
-    ".env.local": "dotenv"
+    ".env.local": "dotenv",
+    ".env.example": "dotenv"
   },
 
   // set prettier as default formatter for json, ts, tsx, js, jsx, css

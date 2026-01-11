@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-tanstarter",
+  "name": "tanstack-turbo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -35,6 +35,7 @@
     "@biomejs/biome": "catalog:",
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
+    "@repo/biome-config": "workspace:*",
     "dotenv-cli": "catalog:",
     "lint-staged": "catalog:",
     "simple-git-hooks": "catalog:",

@@ -10,9 +10,12 @@
     "./*": "./src/*.ts"
   },
   "dependencies": {
-    "better-auth": "catalog:"
+    "@t3-oss/env-core": "catalog:",
+    "better-auth": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
+    "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "typescript": "catalog:"

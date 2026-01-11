@@ -1,4 +1,15 @@
 {
-	"root": false,
-	"extends": ["../../tooling/biome-config/ui.json"]
+  "root": false,
+  "extends": ["@repo/biome-config/base", "@repo/biome-config/tailwind"],
+  "linter": {
+    "rules": {
+      "a11y": {
+        "noLabelWithoutControl": {
+          "options": {
+            "labelComponents": ["Label"]
+          }
+        }
+      }
+    }
+  }
 }

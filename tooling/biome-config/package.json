@@ -5,6 +5,6 @@
   "private": true,
   "exports": {
     "./base": "./base.json",
-    "./ui": "./ui.json"
+    "./tailwind": "./tailwind.json"
   }
 }

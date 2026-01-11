@@ -9,14 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from "./routes/__root";
-import { Route as authenticatedRouteRouteImport } from "./routes/(authenticated)/route";
-import { Route as authPagesRouteRouteImport } from "./routes/(auth-pages)/route";
-import { Route as IndexRouteImport } from "./routes/index";
-import { Route as authPagesSignupRouteImport } from "./routes/(auth-pages)/signup";
 import { Route as authPagesLoginRouteImport } from "./routes/(auth-pages)/login";
-import { Route as authenticatedDashboardRouteRouteImport } from "./routes/(authenticated)/dashboard/route";
+import { Route as authPagesRouteRouteImport } from "./routes/(auth-pages)/route";
+import { Route as authPagesSignupRouteImport } from "./routes/(auth-pages)/signup";
 import { Route as authenticatedDashboardIndexRouteImport } from "./routes/(authenticated)/dashboard/index";
+import { Route as authenticatedDashboardRouteRouteImport } from "./routes/(authenticated)/dashboard/route";
+import { Route as authenticatedRouteRouteImport } from "./routes/(authenticated)/route";
 import { Route as ApiAuthSplatRouteImport } from "./routes/api/auth/$";
+import { Route as IndexRouteImport } from "./routes/index";
 
 const authenticatedRouteRoute = authenticatedRouteRouteImport.update({
 	id: "/(authenticated)",
@@ -226,8 +226,9 @@ export const routeTree = rootRouteImport
 	._addFileChildren(rootRouteChildren)
 	._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from "./router.tsx";
 import type { createStart } from "@tanstack/react-start";
+import type { getRouter } from "./router.tsx";
+
 declare module "@tanstack/react-start" {
 	interface Register {
 		ssr: true;
