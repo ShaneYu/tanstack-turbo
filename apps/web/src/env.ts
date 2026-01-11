@@ -1,11 +1,44 @@
-import { env as authEnv } from "@repo/auth/env";
-import { env as dbEnv } from "@repo/db/env";
 import { createEnv } from "@t3-oss/env-core";
+import { z } from "zod";
 
 export const env = createEnv({
-  extends: [authEnv, dbEnv],
+  server: {
+    /**
+     * The prisma/postgres database URL.
+     * Only accessible on the server, not on the client.
+     */
+    SERVER_DATABASE_URL: z.string(),
 
-  server: {},
+    /**
+     * The better-auth secret used for signing cookies etc.
+     * Only accessible on the server, not on the client.
+     */
+    SERVER_AUTH_SECRET: z.string(),
+
+    /**
+     * The GitHub client ID.
+     * Only accessible on the server, not on the client.
+     */
+    SERVER_GITHUB_CLIENT_ID: z.string(),
+
+    /**
+     * The GitHub client secret.
+     * Only accessible on the server, not on the client.
+     */
+    SERVER_GITHUB_CLIENT_SECRET: z.string(),
+
+    /**
+     * The Google client ID.
+     * Only accessible on the server, not on the client.
+     */
+    SERVER_GOOGLE_CLIENT_ID: z.string(),
+
+    /**
+     * The Google client secret.
+     * Only accessible on the server, not on the client.
+     */
+    SERVER_GOOGLE_CLIENT_SECRET: z.string(),
+  },
 
   /**
    * The prefix that client-side variables must have. This is enforced both at
@@ -13,7 +46,13 @@ export const env = createEnv({
    */
   clientPrefix: "VITE_",
 
-  client: {},
+  client: {
+    /**
+     * The base URL of the server.
+     * Available on the client and server.
+     */
+    VITE_BASE_URL: z.url(),
+  },
 
   /**
    * What object holds the environment variables at runtime. This is usually
@@ -21,7 +60,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: "development",
-    ...process.env,
+    ...(typeof process !== "undefined" ? process.env : {}),
     ...import.meta.env,
   },
 

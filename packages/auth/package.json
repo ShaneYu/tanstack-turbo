@@ -10,7 +10,6 @@
     "./*": "./src/*.ts"
   },
   "dependencies": {
-    "@t3-oss/env-core": "catalog:",
     "better-auth": "catalog:",
     "zod": "catalog:"
   },

@@ -16,6 +16,11 @@
       "inputs": ["$TURBO_DEFAULT$", ".env"],
       "cache": false,
       "persistent": true
+    },
+    "start": {
+      "inputs": ["$TURBO_DEFAULT$", ".env"],
+      "cache": false,
+      "persistent": true
     }
   }
 }

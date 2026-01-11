@@ -14,7 +14,7 @@
   "dependencies": {
     "@prisma/adapter-pg": "catalog:",
     "@prisma/client": "catalog:",
-    "@t3-oss/env-core": "catalog:",
+    "pg": "catalog:",
     "prisma": "catalog:",
     "zod": "catalog:"
   },
@@ -22,6 +22,7 @@
     "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@types/node": "catalog:",
+    "@types/pg": "catalog:",
     "dotenv-cli": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"

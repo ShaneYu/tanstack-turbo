@@ -6,7 +6,7 @@
     "dev": "vite dev --port 3000",
     "build": "vite build",
     "check-types": "tsc --noEmit",
-    "start": "node .output/server/index.mjs",
+    "start": "dotenv -e .env -- node .output/server/index.mjs",
     "ui": "pnpm dlx shadcn@latest"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "@repo/db": "workspace:*",
     "@repo/ui": "workspace:*",
     "@t3-oss/env-core": "catalog:",
+    "pg": "catalog:",
     "@tanstack/react-form-start": "catalog:",
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router-ssr-query": "catalog:",
@@ -43,6 +44,7 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "babel-plugin-react-compiler": "catalog:",
+    "dotenv-cli": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   }

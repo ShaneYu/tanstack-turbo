@@ -5,6 +5,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "dev:web": "turbo run dev --filter=@repo/web",
+    "start": "turbo run start",
+    "start:web": "turbo run start --filter=@repo/web",
     "lint": "biome lint",
     "format": "biome format --write",
     "check-types": "turbo run check-types",

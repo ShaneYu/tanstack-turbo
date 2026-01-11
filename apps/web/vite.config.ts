@@ -8,12 +8,24 @@ import { defineConfig } from "vite";
 export default defineConfig({
   resolve: {
     tsconfigPaths: true,
+    // Ensure React is always resolved to a single instance
+    dedupe: ["react", "react-dom"],
+  },
+  ssr: {
+    // Externalize native Node.js packages that cannot be bundled
+    external: ["pg", "pg-native", "pg-pool"],
+    // Bundle all dependencies for SSR to prevent multiple React instances
+    noExternal: true,
   },
   plugins: [
     devtools(),
     tanstackStart(),
     // https://tanstack.com/start/latest/docs/framework/react/guide/hosting
-    nitro(),
+    nitro({
+      rollupConfig: {
+        external: ["pg", "pg-native", "pg-pool"],
+      },
+    }),
     viteReact({
       // https://react.dev/learn/react-compiler
       babel: {

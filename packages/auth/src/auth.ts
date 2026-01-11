@@ -3,12 +3,21 @@ import { createServerOnlyFn } from "@tanstack/react-start";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { betterAuth } from "better-auth/minimal";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
-import { env } from "./env";
+
+function requireEnv(name: string): string {
+  const value = process.env[name];
+
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+
+  return value;
+}
 
 const getAuthConfig = createServerOnlyFn(() =>
   betterAuth({
-    baseURL: env.VITE_BASE_URL,
-    secret: env.SERVER_AUTH_SECRET,
+    baseURL: process.env.VITE_BASE_URL,
+    secret: process.env.SERVER_AUTH_SECRET,
     telemetry: {
       enabled: false,
     },
@@ -30,12 +39,12 @@ const getAuthConfig = createServerOnlyFn(() =>
     // https://www.better-auth.com/docs/concepts/oauth
     socialProviders: {
       github: {
-        clientId: env.SERVER_GITHUB_CLIENT_ID,
-        clientSecret: env.SERVER_GITHUB_CLIENT_SECRET,
+        clientId: requireEnv("SERVER_GITHUB_CLIENT_ID"),
+        clientSecret: requireEnv("SERVER_GITHUB_CLIENT_SECRET"),
       },
       google: {
-        clientId: env.SERVER_GOOGLE_CLIENT_ID,
-        clientSecret: env.SERVER_GOOGLE_CLIENT_SECRET,
+        clientId: requireEnv("SERVER_GOOGLE_CLIENT_ID"),
+        clientSecret: requireEnv("SERVER_GOOGLE_CLIENT_SECRET"),
       },
     },
 
