@@ -179,6 +179,12 @@ importers:
 
   apps/web:
     dependencies:
+      '@prisma/adapter-pg':
+        specifier: 'catalog:'
+        version: 7.2.0
+      '@prisma/client':
+        specifier: 'catalog:'
+        version: 7.2.0(prisma@7.2.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)
       '@repo/auth':
         specifier: workspace:*
         version: link:../../packages/auth
@@ -285,6 +291,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vite-plugin-wasm:
+        specifier: ^3.4.1
+        version: 3.5.0(vite@8.0.0-beta.7(@types/node@24.10.7)(esbuild@0.25.12)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.2))
 
   packages/auth:
     dependencies:
@@ -4486,6 +4495,11 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
+  vite-plugin-wasm@3.5.0:
+    resolution: {integrity: sha512-X5VWgCnqiQEGb+omhlBVsvTfxikKtoOgAzQ95+BZ8gQ+VfMHIjSHr0wyvXFQCa0eKQ0fKyaL0kWcEnYqBac4lQ==}
+    peerDependencies:
+      vite: ^8.0.0-beta.7
+
   vite@8.0.0-beta.7:
     resolution: {integrity: sha512-Q0xCPeahlSj0XMSPARLmycykV2Q7/KjSAkX0DE+EjNVeYgVuzUC2irMk0bNL5Y5zsmAbw1f00VyvsPsPQDCtEA==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -8405,6 +8419,10 @@ snapshots:
   validate-npm-package-name@7.0.2: {}
 
   vary@1.1.2: {}
+
+  vite-plugin-wasm@3.5.0(vite@8.0.0-beta.7(@types/node@24.10.7)(esbuild@0.25.12)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.2)):
+    dependencies:
+      vite: 8.0.0-beta.7(@types/node@24.10.7)(esbuild@0.25.12)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.2)
 
   vite@8.0.0-beta.7(@types/node@24.10.7)(esbuild@0.25.12)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.2):
     dependencies:
