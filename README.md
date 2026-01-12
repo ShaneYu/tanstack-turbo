@@ -10,7 +10,7 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo.
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) + [Base UI](https://base-ui.com/)
 - [Prisma ORM](https://www.prisma.io/) + PostgreSQL
 - [Better Auth](https://www.better-auth.com/)
-- [TS Env](https://env.t3.gg/)
+- [T3 Env](https://env.t3.gg/)
 
 ## Getting started
 
