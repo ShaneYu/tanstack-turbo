@@ -4,6 +4,7 @@
     "bradlc.vscode-tailwindcss",
     "mikestead.dotenv",
     "editorconfig.editorconfig",
-    "csstools.postcss"
+    "csstools.postcss",
+    "vitest.explorer"
   ]
 }

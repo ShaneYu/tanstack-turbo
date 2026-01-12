@@ -7,6 +7,7 @@
     "build": "vite build",
     "check-types": "tsc --noEmit",
     "start": "dotenv -e .env -- node .output/server/index.mjs",
+    "test": "vitest run",
     "ui": "pnpm dlx shadcn@latest"
   },
   "dependencies": {
@@ -36,18 +37,26 @@
   "devDependencies": {
     "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
+    "@repo/vitest-config": "workspace:*",
     "@tailwindcss/vite": "catalog:",
     "@tanstack/devtools-vite": "catalog:",
     "@tanstack/react-devtools": "catalog:",
     "@tanstack/react-form-devtools": "catalog:",
     "@tanstack/react-query-devtools": "catalog:",
     "@tanstack/react-router-devtools": "catalog:",
+    "@testing-library/dom": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
     "babel-plugin-react-compiler": "catalog:",
+    "canvas": "catalog:",
     "dotenv-cli": "catalog:",
     "tailwindcss": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

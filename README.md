@@ -1,4 +1,4 @@
-# Tanstack Turbo
+# Tanstack Turbo with Vitest
 
 A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo.
 
@@ -6,6 +6,7 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo.
 - [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler)
 - TanStack [Start](https://tanstack.com/start/latest) + [Router](https://tanstack.com/router/latest) + [Query](https://tanstack.com/query/latest) + [Form](https://tanstack.com/form/latest)
 - [Vite 8](https://vite.dev/blog/announcing-vite8-beta) (beta) + [Nitro v3](https://v3.nitro.build/) (nightly)
+- [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/) + [Axe](https://github.com/chaance/vitest-axe#readme) (accessibility testing)
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) + [Base UI](https://base-ui.com/)
 - [Prisma ORM](https://www.prisma.io/) + PostgreSQL
 - [Better Auth](https://www.better-auth.com/)
@@ -16,7 +17,7 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo.
 1. [Use this template](https://github.com/new?template_name=tanstack-turbo&template_owner=shaneyu) or clone this repository with gitpick:
 
   ```bash
-  npx gitpick shaneyu/tanstack-turbo myapp
+  pnpm dlx gitpick shaneyu/tanstack-turbo -b with-vitest myapp
   cd myapp
   ```
 
@@ -50,6 +51,23 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo.
 
   The development server should now be running at http://localhost:3000.
 
+## Testing
+
+This monorepo uses a per-package cached approach where each package has it's own Vitest configuration that imports shared settings from `@repo/vitest-config`. This approach leverages Turborepo's caching effectively.
+
+### Scripts
+
+- `test` - Runs tests in each package using Turborepo (leverages caching)
+- `view-report` - Collects coverage from each package and shows it in a merged report
+
+### Configuration
+
+The `tooling/vitest-config` package exports a handful of vitest configurations:
+
+- `sharedConfig` - Base configuration with coverage settings
+- `baseConfig` - For Node.js packages (like `math`)
+- `uiConfig` - For packages requiring jsdom environment (like `apps/web`)
+
 ## Deploying to production
 
 The [vite config](https://github.com/shaneyu/tanstack-turbo/blob/main/apps/web/vite.config.ts#L12-L13) is currently configured to use [Nitro v3](https://v3.nitro.build/) (nightly) to deploy on Vercel, but can be easily switched to other providers.
@@ -75,6 +93,8 @@ We use pnpm by default, but you can modify these scripts in [package.json](https
 - `format`, `lint`, `check-types` - Run Biome and check TypeScript types respectively.
   - `check` - Run all three above. (e.g. `pnpm check`)
 - `deps` - Selectively upgrade dependencies via taze.
+
+_See the testing section regarding available test scripts._
 
 ### Utilities
 

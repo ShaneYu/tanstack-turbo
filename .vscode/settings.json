@@ -29,8 +29,26 @@
     ".env.example": "dotenv"
   },
 
-  // set prettier as default formatter for json, ts, tsx, js, jsx, css
-  "[json][jsonc][typescript][typescriptreact][javascript][javascriptreact][css]": {
+  // set biome as default formatter for the following file types
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
 

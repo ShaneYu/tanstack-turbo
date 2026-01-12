@@ -7,6 +7,8 @@
     "dev:web": "turbo run dev --filter=@repo/web",
     "start": "turbo run start",
     "start:web": "turbo run start --filter=@repo/web",
+    "test": "turbo run test",
+    "view-report": "turbo run view-report",
     "lint": "biome lint",
     "format": "biome format --write",
     "check-types": "turbo run check-types",
@@ -38,10 +40,12 @@
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
     "@repo/biome-config": "workspace:*",
+    "@repo/vitest-config": "workspace:*",
     "dotenv-cli": "catalog:",
     "lint-staged": "catalog:",
     "simple-git-hooks": "catalog:",
-    "turbo": "catalog:"
+    "turbo": "catalog:",
+    "vitest": "catalog:"
   },
   "packageManager": "pnpm@10.28.0",
   "engines": {
