@@ -1,12 +1,12 @@
 # Tanstack Turbo with Vitest
 
-A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo.
+A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo with Vitest.
 
 - [Turborepo](https://turborepo.com/) + [pnpm](https://pnpm.io/)
 - [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler)
 - TanStack [Start](https://tanstack.com/start/latest) + [Router](https://tanstack.com/router/latest) + [Query](https://tanstack.com/query/latest) + [Form](https://tanstack.com/form/latest)
 - [Vite 8](https://vite.dev/blog/announcing-vite8-beta) (beta) + [Nitro v3](https://v3.nitro.build/) (nightly)
-- [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/) + [Axe](https://github.com/chaance/vitest-axe#readme) (accessibility testing)
+- [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/) + [Axe](https://github.com/chaance/vitest-axe#readme) (accessibility testing) + [jsdom-testing-mocks](https://github.com/trurl-master/jsdom-testing-mocks?tab=readme-ov-file#jsdom-testing-mocks)
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) + [Base UI](https://base-ui.com/)
 - [Prisma ORM](https://www.prisma.io/) + PostgreSQL
 - [Better Auth](https://www.better-auth.com/)
