@@ -5,6 +5,7 @@ export const uiConfig = mergeConfig(
   baseConfig,
   defineConfig({
     test: {
+      globals: true,
       environment: "jsdom",
     },
   }),

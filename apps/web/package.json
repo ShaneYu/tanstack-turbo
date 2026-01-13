@@ -53,10 +53,11 @@
     "@types/react-dom": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "babel-plugin-react-compiler": "catalog:",
-    "canvas": "catalog:",
     "dotenv-cli": "catalog:",
+    "jsdom-testing-mocks": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "vitest-axe": "catalog:"
   }
 }

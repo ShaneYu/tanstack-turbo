@@ -1,4 +1,4 @@
-import { expect, test, vi } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -21,10 +21,7 @@ const renderWithRouter = (routeTree: AnyRoute, initialEntries: string[] = ["/"])
   return render(<RouterProvider router={router} />);
 };
 
-test("back button should go back to the previous page", async () => {
-  const user = userEvent.setup();
-  const backSpy = vi.spyOn(window.history, "back").mockImplementation(() => {});
-
+const renderAsDefaultRoute = () => {
   const rootRoute = createRootRoute({
     component: () => <Outlet />,
   });
@@ -36,43 +33,63 @@ test("back button should go back to the previous page", async () => {
   });
 
   const routeTree = rootRoute.addChildren([homeRoute]);
-  renderWithRouter(routeTree);
 
-  const backButton = await screen.findByRole("button", { name: /go back/i});
-  await user.click(backButton);
-  expect(backSpy).toHaveBeenCalledTimes(1);
-});
+  return {
+    ...renderWithRouter(routeTree),
+    routeTree,
+  };
+};
 
-test("home button should go to the home page", async () => {
-  const user = userEvent.setup();
+describe("DefaultNotFound", () => {
+  test("should navigate to the previous page when the back button is clicked", async () => {
+    const user = userEvent.setup();
+    const backSpy = vi.spyOn(window.history, "back").mockImplementation(() => {});
 
-  const rootRoute = createRootRoute({
-    component: () => <Outlet />,
+    renderAsDefaultRoute();
+
+    const backButton = await screen.findByRole("button", { name: /go back/i});
+    await user.click(backButton);
+    expect(backSpy).toHaveBeenCalledTimes(1);
   });
 
-  const homeRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/",
-    component: () => <h1>Home page</h1>,
+  test("should navigate to the home page when the home button is clicked", async () => {
+    const user = userEvent.setup();
+
+    const rootRoute = createRootRoute({
+      component: () => <Outlet />,
+    });
+
+    const homeRoute = createRoute({
+      getParentRoute: () => rootRoute,
+      path: "/",
+      component: () => <h1>Home page</h1>,
+    });
+
+    const otherRoute = createRoute({
+      getParentRoute: () => rootRoute,
+      path: "/other",
+      component: () => (
+        <>
+          <h1>Other page</h1>
+          <DefaultNotFound />
+        </>
+      ),
+    });
+
+    const routeTree = rootRoute.addChildren([homeRoute, otherRoute]);
+    renderWithRouter(routeTree, ["/other"]);
+
+    expect (await screen.findByRole("heading", { name: /other page/i})).toBeTruthy();
+
+    await user.click(screen.getByRole("button", { name: /home/i}));
+
+    expect(await screen.findByRole("heading", { name: /home page/i})).toBeTruthy();
   });
 
-  const otherRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/other",
-    component: () => (
-      <>
-        <h1>Other page</h1>
-        <DefaultNotFound />
-      </>
-    ),
+  test("should have no accessibility violations", async () => {
+    const { container } = renderAsDefaultRoute();
+    const results = await runner.axe(container);
+
+    expect(results).toHaveNoViolations();
   });
-
-  const routeTree = rootRoute.addChildren([homeRoute, otherRoute]);
-  renderWithRouter(routeTree, ["/other"]);
-
-  expect (await screen.findByRole("heading", { name: /other page/i})).toBeTruthy();
-
-  await user.click(screen.getByRole("button", { name: /home/i}));
-
-  expect(await screen.findByRole("heading", { name: /home page/i})).toBeTruthy();
 });
