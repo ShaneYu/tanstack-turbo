@@ -1,0 +1,7 @@
+{
+  "root": false,
+  "extends": ["@repo/biome-config/base"],
+  "files": {
+    "includes": ["*.ts", "*.json", "*.mjs", "*.js", "**/src/**/*"]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@repo/api",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "dev": "vite dev --port 3001",
+    "build": "vite build",
+    "check-types": "tsc --noEmit",
+    "start": "echo \"start script not setup yet\" && exit 1",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hono/node-server": "catalog:",
+    "hono": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@hono/vite-build": "catalog:",
+    "@hono/vite-dev-server": "catalog:",
+    "@repo/biome-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@repo/vitest-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  }
+}

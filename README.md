@@ -1,6 +1,9 @@
-# Tanstack Turbo with Vitest
+# Tanstack Turbo with Hono & Vitest
 
-A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo with Vitest.
+A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo with Hono & Vitest.
+
+> [!WARNING]
+> WIP - This template is still in development and is not ready for production use.
 
 - [Turborepo](https://turborepo.com/) + [pnpm](https://pnpm.io/)
 - [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler)
@@ -11,6 +14,7 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo w
 - [Prisma ORM](https://www.prisma.io/) + PostgreSQL
 - [Better Auth](https://www.better-auth.com/)
 - [T3 Env](https://env.t3.gg/)
+- [Hono](https://hono.dev/)
 
 ## Getting started
 
