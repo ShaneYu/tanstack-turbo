@@ -1,7 +1,6 @@
 import { Hono } from "hono/tiny";
-import goodbye from "./routes/goodbye";
-import hello from "./routes/hello";
+import todo from "./routes/todo";
 
-export const app = new Hono().route("/hello", hello).route("/goodbye", goodbye);
+export const app = new Hono().route("/todo", todo);
 
 export type AppType = typeof app;

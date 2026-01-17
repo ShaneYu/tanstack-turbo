@@ -7,7 +7,7 @@
     "./client": "./src/client.ts"
   },
   "scripts": {
-    "dev": "vite dev --port 3001",
+    "dev": "dotenv -e .env -- vite dev --port 3001",
     "build": "vite build",
     "check-types": "tsc --noEmit",
     "start": "echo \"start script not setup yet\" && exit 1",
@@ -15,6 +15,10 @@
   },
   "dependencies": {
     "@hono/node-server": "catalog:",
+    "@hono/zod-validator": "catalog:",
+    "@repo/auth": "workspace:*",
+    "@repo/db": "workspace:*",
+    "@repo/validation": "workspace:*",
     "hono": "catalog:",
     "zod": "catalog:"
   },
@@ -26,6 +30,7 @@
     "@repo/vitest-config": "workspace:*",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
+    "dotenv-cli": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:"

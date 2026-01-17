@@ -1,8 +1,25 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated"
+  output   = "../generated/client"
+}
+
+generator zod {
+  provider = "prisma-zod-generator"
+  output   = "../generated/zod"
+  config   = "../prisma-zod-generator.config.json"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Todo {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  completed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("todo")
 }

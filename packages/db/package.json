@@ -9,6 +9,7 @@
   },
   "exports": {
     ".": "./src/index.ts",
+    "./schema": "./src/generated/zod/schemas/index.ts",
     "./env": "./src/env.ts"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "@prisma/client": "catalog:",
     "pg": "catalog:",
     "prisma": "catalog:",
+    "prisma-zod-generator": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
