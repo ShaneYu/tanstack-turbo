@@ -1,6 +1,12 @@
 {
   "$schema": "./node_modules/prisma-zod-generator/lib/config/schema.json",
   "mode": "full",
+  "models": {
+    "Account": { "enabled": false },
+    "User": { "enabled": false },
+    "Session": { "enabled": false },
+    "Verification": { "enabled": false }
+  },
   "pureModels": true,
   "variants": {
     "pure": { "enabled": true },
