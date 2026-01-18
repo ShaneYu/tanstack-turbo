@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "generatorVersion": "0.0.0",
-  "generatedAt": "2026-01-18T16:49:16.835Z",
+  "generatedAt": "2026-01-18T16:53:07.689Z",
   "outputPath": "G:\\Code\\Personal\\monorepo-tanstarter\\packages\\db\\src\\generated\\zod",
   "files": [
     "schemas\\enums\\TransactionIsolationLevel.schema.ts",
@@ -103,10 +103,6 @@
     "schemas\\results\\TodoCountResult.schema.ts",
     "schemas\\results\\index.ts",
     "schemas\\index.ts",
-    "schemas\\variants\\pure\\Todo.pure.ts",
-    "schemas\\variants\\pure\\index.ts",
-    "schemas\\variants\\input\\Todo.input.ts",
-    "schemas\\variants\\input\\index.ts",
     "schemas\\variants\\result\\Todo.result.ts",
     "schemas\\variants\\result\\index.ts",
     "schemas\\variants\\index.ts"
@@ -116,8 +112,6 @@
     "schemas\\objects",
     "schemas",
     "schemas\\results",
-    "schemas\\variants\\pure",
-    "schemas\\variants\\input",
     "schemas\\variants\\result",
     "schemas\\variants"
   ],
