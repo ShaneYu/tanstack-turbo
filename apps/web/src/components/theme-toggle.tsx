@@ -5,11 +5,19 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@repo/ui/components/dropdown-menu";
+import { useViewTransition } from "@repo/ui/hooks/use-view-transition";
 import { useTheme } from "@repo/ui/lib/theme-provider";
 import { MoonIcon, SunIcon } from "lucide-react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const { startTransition } = useViewTransition();
+
+  const handleThemeChange = (value: "light" | "dark" | "system") => {
+    startTransition(() => {
+      setTheme(value);
+    });
+  };
 
   return (
     <DropdownMenu>
@@ -19,13 +27,16 @@ export function ThemeToggle() {
         <span className="sr-only">Toggle theme</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuCheckboxItem checked={theme === "light"} onCheckedChange={(v) => v && setTheme("light")}>
+        <DropdownMenuCheckboxItem checked={theme === "light"} onCheckedChange={(v) => v && handleThemeChange("light")}>
           Light
         </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={theme === "dark"} onCheckedChange={(v) => v && setTheme("dark")}>
+        <DropdownMenuCheckboxItem checked={theme === "dark"} onCheckedChange={(v) => v && handleThemeChange("dark")}>
           Dark
         </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={theme === "system"} onCheckedChange={(v) => v && setTheme("system")}>
+        <DropdownMenuCheckboxItem
+          checked={theme === "system"}
+          onCheckedChange={(v) => v && handleThemeChange("system")}
+        >
           System
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
