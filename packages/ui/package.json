@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "ui": "pnpm dlx shadcn@latest",
+    "ui": "bunx shadcn@latest",
     "check-types": "tsc --noEmit"
   },
   "exports": {

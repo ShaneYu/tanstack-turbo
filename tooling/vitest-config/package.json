@@ -19,17 +19,17 @@
     "view-report": "open-cli coverage/report/index.html"
   },
   "dependencies": {
-    "vitest": "catalog:"
+    "vitest": "catalog:testing"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
-    "@types/node": "catalog:",
-    "@vitest/coverage-istanbul": "catalog:",
-    "@vitest/ui": "catalog:",
-    "glob": "catalog:",
-    "jsdom": "catalog:",
-    "nyc": "catalog:",
-    "open-cli": "catalog:",
+    "@types/bun": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:testing",
+    "@vitest/ui": "catalog:testing",
+    "glob": "catalog:build",
+    "jsdom": "catalog:testing",
+    "nyc": "catalog:testing",
+    "open-cli": "catalog:testing",
     "typescript": "catalog:"
   }
 }

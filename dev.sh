@@ -28,7 +28,7 @@ else
 fi
 
 # Start the development server
-pnpm $DEV_CMD
+bun $DEV_CMD
 
 # Cleanup function
 cleanup() {

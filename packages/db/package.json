@@ -23,10 +23,10 @@
   "devDependencies": {
     "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
-    "@types/node": "catalog:",
+    "@types/bun": "catalog:",
     "@types/pg": "catalog:",
-    "dotenv-cli": "catalog:",
-    "tsx": "catalog:",
+    "dotenv-cli": "catalog:build",
+    "tsx": "catalog:build",
     "typescript": "catalog:"
   }
 }

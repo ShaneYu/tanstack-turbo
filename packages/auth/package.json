@@ -16,7 +16,7 @@
   "devDependencies": {
     "@repo/biome-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
-    "@types/node": "catalog:",
+    "@types/bun": "catalog:",
     "typescript": "catalog:"
   },
   "peerDependencies": {

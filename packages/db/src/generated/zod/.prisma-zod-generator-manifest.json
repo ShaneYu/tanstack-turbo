@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generatorVersion": "0.0.0",
-  "generatedAt": "2026-02-21T11:33:52.248Z",
+  "generatorVersion": "unknown",
+  "generatedAt": "2026-02-21T12:23:43.511Z",
   "outputPath": "G:\\Code\\Personal\\tanstack-turbo\\packages\\db\\src\\generated\\zod",
   "files": [
     "schemas\\enums\\TransactionIsolationLevel.schema.ts",

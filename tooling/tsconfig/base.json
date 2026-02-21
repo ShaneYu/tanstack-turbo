@@ -11,6 +11,7 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "types": ["bun"]
   }
 }

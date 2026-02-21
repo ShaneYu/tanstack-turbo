@@ -3,7 +3,7 @@
   "compilerOptions": {
     "composite": true,
     "moduleResolution": "bundler",
-    "types": ["vite/client"],
+    "types": ["bun", "vite/client"],
     "lib": ["ESNext"],
     "noEmit": false,
     "paths": {

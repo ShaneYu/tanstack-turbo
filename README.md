@@ -1,11 +1,11 @@
-# Tanstack Turbo with Hono & Vitest
+# Tanstack Turbo with Hono, Vitest and Bun
 
-A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo with Hono & Vitest.
+A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo with Hono, Vitest and Bun.
 
 > [!WARNING]
 > WIP - This template is still in development and is not ready for production use.
 
-- [Turborepo](https://turborepo.com/) + [pnpm](https://pnpm.io/)
+- [Turborepo](https://turborepo.com/) + [Bun](https://bun.com/)
 - [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler)
 - TanStack [Start](https://tanstack.com/start/latest) + [Router](https://tanstack.com/router/latest) + [Query](https://tanstack.com/query/latest) + [Form](https://tanstack.com/form/latest)
 - [Vite 8](https://vite.dev/blog/announcing-vite8-beta) (beta) + [Nitro v3](https://v3.nitro.build/) (nightly)
@@ -18,17 +18,17 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo w
 
 ## Getting started
 
-1. [Use this template](https://github.com/new?template_name=tanstack-turbo&template_owner=shaneyu) or clone this repository with gitpick:
+1. Clone this repository with gitpick:
 
   ```bash
-  pnpm dlx gitpick shaneyu/tanstack-turbo -b with-vitest myapp
+  bunx gitpick shaneyu/tanstack-turbo -b with-hono-vitest-bun myapp
   cd myapp
   ```
 
 2. Install dependencies:
 
   ```bash
-  pnpm install
+  bun install
   ```
 
 3. Create `.env` files.
@@ -42,7 +42,7 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo w
 4. Push the schema to your database with prisma:
 
   ```bash
-  pnpm db push
+  bun db push
   ```
 
   https://www.prisma.io/docs/guides/data-migration
@@ -50,7 +50,7 @@ A minimal monorepo starter template for 🏝️ TanStack Start using Turborepo w
 5. Run the development server:
 
   ```bash
-  pnpm dev
+  bun dev
   ```
 
   The development server should now be running at http://localhost:3000.
@@ -89,11 +89,11 @@ Refer to the [TanStack Start hosting docs](https://tanstack.com/start/latest/doc
 
 ### Scripts
 
-We use pnpm by default, but you can modify these scripts in [package.json](https://github.com/shaneyu/tanstack-turbo/blob/main/package.json) to use your preferred package manager.
+We use bun by default, but you can modify these scripts in [package.json](https://github.com/shaneyu/tanstack-turbo/blob/main/package.json) to use your preferred package manager.
 
 - `auth:generate` - Regenerate the [auth db schema](https://github.com/shaneyu/tanstack-turbo/blob/main/packages/db/src/schema/auth.prisma) if you've made changes to your [Better Auth config](https://github.com/shaneyu/tanstack-turbo/blob/main/packages/auth/src/auth.ts).
-- `db` - Run [prisma](https://www.prisma.io/docs/orm/tools/prisma-cli#synopsis) commands. (e.g. `pnpm db generate`, `pnpm db studio`)
-- `ui` - The shadcn/ui CLI. (e.g. `pnpm ui add button`)
+- `db` - Run [prisma](https://www.prisma.io/docs/orm/tools/prisma-cli#synopsis) commands. (e.g. `bun db generate`, `bun db studio`)
+- `ui` - The shadcn/ui CLI. (e.g. `bun ui add button`)
 - `format`, `lint`, `check-types` - Run Biome and check TypeScript types respectively.
   - `check` - Run all three above. (e.g. `pnpm check`)
 - `deps` - Selectively upgrade dependencies via taze.

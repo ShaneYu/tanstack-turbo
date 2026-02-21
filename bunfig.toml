@@ -1,0 +1,13 @@
+[install]
+publicHoistPattern = [
+  "nitro*",
+  "h3",
+  "vinxi*",
+  "@tanstack/*",
+  "vite*",
+  "simple-git-hooks",
+  "eslint*",
+  "prettier*",
+  "postcss*",
+  "tailwindcss",
+]
