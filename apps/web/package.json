@@ -6,7 +6,7 @@
     "dev": "vite dev --port 3000",
     "build": "vite build",
     "check-types": "tsc --noEmit",
-    "start": "dotenv -e .env -- node .output/server/index.mjs",
+    "start": "dotenv -e .env -- cross-env NODE_ENV=production node .output/server/index.mjs",
     "test": "vitest run",
     "ui": "pnpm dlx shadcn@latest"
   },
